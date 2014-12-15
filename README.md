@@ -8,16 +8,15 @@ This is simple rc.d fix scrtip.
 
 you can copy it in /usr/local/etc/rc.d/
 
-EXAMPLE:
+**EXAMPLE:**
 	
-	/etc/iscsi.conf 
+	**/etc/iscsi.conf** 
 	ds {
 	TargetAddress   = 192.168.1.200
 	TargetName      = iqn.2000-01.com.synology:ds.target-1.be23ecdef5
 	}
 	
-	/etc/rc.conf
-	
+	**/etc/rc.conf**
 	zfs_enable="YES"
 	zfs_iscsi_enable="YES"  # zfs_iscsi 
 	iscsi_flags="-n ds"
