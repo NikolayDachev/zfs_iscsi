@@ -9,6 +9,7 @@ This is simple rc.d fix scrtip.
 you can copy it in /usr/local/etc/rc.d/
 
 EXAMPLE:
+	
 	/etc/iscsi.conf 
 	ds {
 	TargetAddress   = 192.168.1.200
@@ -16,6 +17,7 @@ EXAMPLE:
 	}
 	
 	/etc/rc.conf
+	
 	zfs_enable="YES"
 	zfs_iscsi_enable="YES"  # zfs_iscsi 
 	iscsi_flags="-n ds"
