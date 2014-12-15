@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# PROVIDE: zfs_iscsi
+# REQUIRE: NETWORKING iscsid iscsictl
+# BEFORE: amd LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="zfs_iscsi"
+rcvar=`set_rcvar`
+stop_cmd=":"
+start_cmd="zfs_mount"
+
+zfs_mount() {
+    if checkyesno zfs_enable ; then
+        sleep 5		# give time for iscsi to setup
+        zfs mount -a	# mount newly available file systems
+    fi
+}
+
+load_rc_config $name
+run_rc_command "$1"
